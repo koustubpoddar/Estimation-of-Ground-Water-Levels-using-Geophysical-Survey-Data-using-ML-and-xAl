@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #upload-form {
+    margin-bottom: 20px;
+  }
+  
+  #analyze-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #analyze-button:hover {
+    background-color: #3e8e41;
+  }
+  
+  #output-container {
+    margin-top: 20px;
+  }
+  
+  #output-image {
+    width: 100%;
+    height: auto;
+  }
