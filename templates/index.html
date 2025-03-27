@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Groundwater Level Estimation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>Groundwater Level Estimation</h1>
+
+    <form id="csv-form" method="post" action="{{ url_for('analyze') }}" enctype="multipart/form-data">
+      <label for="csv-file">Upload CSV file:</label>
+      <input type="file" id="csv-file" name="csv_file" accept=".csv">
+      <button type="submit">Analyze</button>
+    </form>
+
+    <div id="output">
+      <h2>Output:</h2>
+      
+      <!-- Image will be displayed here -->
+      {% if image_name %}
+        <h3>Generated Visualization:</h3>
+        <img id="output-image" src="{{ url_for('serve_image', image_name=image_name) }}" alt="2D Subsurface Profile">
+      {% endif %}
+
+      <!-- Predictions will be displayed here -->
+      <ul id="predictions-list"></ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
